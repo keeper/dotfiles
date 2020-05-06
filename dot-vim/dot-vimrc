@@ -22,6 +22,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'Raimondi/delimitMate'
 Plugin 'rhysd/vim-clang-format'
+Plugin 'Chiel92/vim-autoformat'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,6 +51,8 @@ syntax on
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_extra_conf_vim_data = ['&filetype']
 let g:nerdtree_tabs_open_on_console_startup = 1
+
+autocmd FileType python map <buffer> <F3> :call flake8#Flake8()<CR>
 
 colorscheme tender
 
@@ -143,12 +146,16 @@ let g:clang_format#style_options = {
             \ "Standard" : "C++11"}
 let g:clang_format#code_style = "llvm"
 
+let g:formatterpath = ['/usr/bin/autopep8']
 " map to <Leader>cf in C++ code
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " Toggle auto formatting:
 nmap <Leader>C :ClangFormatAutoToggle<CR>
 set pastetoggle=<F2>
+
+"python autoformat:
+autocmd FileType python noremap <Leader>cf :Autoformat<CR>
 
 " YCM autofix
 autocmd FileType c,cpp,objc nnoremap <Leader>ff :YcmCompleter FixIt<CR>
