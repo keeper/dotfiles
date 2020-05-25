@@ -50,13 +50,13 @@ alias make="make -j15"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow-completion)
+plugins=(git git-flow-completion poetry)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="$HOME/bin:/usr/lib/llvm/7/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/opt/cuda/bin:/usr/games/bin:/sbin:/usr/sbin:$HOME/.local/bin"
+export PATH="$HOME/bin:/usr/lib/llvm/7/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/opt/cuda/bin:/usr/games/bin:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/.poetry/bin"
 # export LD_LIBRARY_PATH="/usr/lib:/usr/lib/x86_64-linux-gnu"
 # export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 # export PYTHONPATH="/usr/lib/root/6.16/lib:$PYTHONPATH"
